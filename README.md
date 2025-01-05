@@ -13,5 +13,13 @@
 Obs.: O node exporter, apenas vai trazer os recursos da máquina física, se pretende visualizar 
 as métricas da sua aplicação, o desenvolvedor deve criar esses metricas na sua aplicação e expô-las na route /metrics
 a seguir, poderá adicionar a sua app no ficheiro de configuração do prometheus, só depois irá desenhar os
-dashboards no grafana.
+dashboards no grafana. Na pasta app_example, tem uma aplicação de exemplo, feita com o node js. 
 
+### APP METRICS - EXAMPLE
+- acesse: http://localhost:3001/metrics
+    -- total de requisicoes
+    -- total de usuario logados na app
+    -- tempo de resposta da App
+
+
+<img src="./img/app.png">

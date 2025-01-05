@@ -6,12 +6,23 @@ networks:
 
 services:
 
+  app_metrics:
+    build: ./app_example
+    image: app_metrics
+    container_name: app_metrics
+    ports:
+      - 3001:3001
+    networks:
+      - app_metrics
+
   prometheus:
     image: prom/prometheus:v3.1.0
     container_name: prometheus
     #restart: unless-stopped
     #depends_on:
     #  - node_exporter
+    links:
+     - app_metrics
     ports:
       - "9090:9090"
     volumes:
